@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidLab2</string>
+    <string name="height_textview">Рост</string>
+    <string name="weight_textview">Вес</string>
+    <string name="height_measure">м</string>
+    <string name="weight_measure">кг</string>
+</resources>
