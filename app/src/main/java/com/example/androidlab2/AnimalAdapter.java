@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +16,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     private List<AnimalInfo> animalList;
     private Context context;
 
-    AnimalAdapter(Context context,List<AnimalInfo> animalList) {
+    AnimalAdapter(Context context, List<AnimalInfo> animalList) {
         this.animalList = animalList;
         this.context = context;
     }
@@ -31,20 +32,23 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         AnimalInfo animal = animalList.get(position);
         holder.animalNameTextView.setText(animal.getName());
         String weight = context.getString(R.string.weight_textview);
-        String height= context.getString(R.string.height_textview);
-        String weightMeasure= context.getString(R.string.weight_measure);
-        String heightMeasure= context.getString(R.string.height_measure);
+        String height = context.getString(R.string.height_textview);
+        String weightMeasure = context.getString(R.string.weight_measure);
+        String heightMeasure = context.getString(R.string.height_measure);
         holder.animalWeightTextView.setText(GetCharacteristicMessage(weight, String.valueOf(animal.getWeight()), weightMeasure));
         holder.animalHeightTextView.setText(GetCharacteristicMessage(height, String.valueOf(animal.getHeight()), heightMeasure));
         holder.animalImageView.setImageResource(animal.getPictureResource());
     }
-    private String GetCharacteristicMessage(String characteristic,String value, String measure){
-        return characteristic + ": " + value + " "+ measure;
+
+    private String GetCharacteristicMessage(String characteristic, String value, String measure) {
+        return characteristic + ": " + value + " " + measure;
     }
+
     @Override
     public int getItemCount() {
         return animalList.size();
     }
+
     static class AnimalViewHolder extends RecyclerView.ViewHolder {
         TextView animalNameTextView;
         TextView animalHeightTextView;

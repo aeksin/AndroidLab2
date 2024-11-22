@@ -5,12 +5,14 @@ public class AnimalInfo {
     private float weight;
     private float height;
     private int pictureResource;
-    public AnimalInfo(String name, float weight, float height, int  pictureId){
-        this.name=name;
-        this.weight=weight;
-        this.height=height;
+
+    public AnimalInfo(String name, float weight, float height, int pictureId) {
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
         this.pictureResource = pictureId;
     }
+
     public String getName() {
         return this.name;
     }
@@ -26,6 +28,7 @@ public class AnimalInfo {
     public void setWeight(float weight) {
         this.weight = weight;
     }
+
     public float getHeight() {
         return this.height;
     }
@@ -33,6 +36,7 @@ public class AnimalInfo {
     public void setHeight(float height) {
         this.height = height;
     }
+
     public int getPictureResource() {
         return this.pictureResource;
     }
